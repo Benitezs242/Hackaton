@@ -6,7 +6,7 @@ Fcant.addEventListener("submit", (e) => {
     let micadena = e.target.Icant.value
     cantidad= 0
 
-    for (x of micadena){
+    for (let x of micadena){
         if (lasvocales.includes(x.toLowerCase())){
             cantidad++
         }

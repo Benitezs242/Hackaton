@@ -5,7 +5,7 @@ Ffactor.addEventListener("submit", (e) => {
     let minumero = e.target.Ifactor.value
     let factorial = 1
 
-    for (x = 1; x <= minumero; x++) {
+    for (let x = 1; x <= minumero; x++) {
         factorial = factorial*x
     }
 

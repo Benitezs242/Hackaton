@@ -5,7 +5,7 @@ Fprimo.addEventListener("submit", (e) => {
     let minumero = e.target.Iprimo.value
     let divisible = 0
 
-    for (x = 1; x <= minumero; x++) {
+    for (let x = 1; x <= minumero; x++) {
         if(minumero%x == 0){
             divisible++
         }

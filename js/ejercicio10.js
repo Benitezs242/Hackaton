@@ -1,37 +1,45 @@
-let Fanagramas = document.querySelector('#Fanagramas')
-Fanagramas.addEventListener("submit", (e) => {
+let Fentero = document.querySelector('#Fentero')
+Fentero.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    let micadena1 = e.target.Ianagramas1.value
-    let micadena2 = e.target.Ianagramas2.value
+    let limite = e.target.Ientero.value
+    let misprimos = []
 
 
-    let anagram1 = micadena1.replace(/ /g, '').toLowerCase()
-    anagram1 = anagram1.split('').sort().join('')
+
+    for (let x=1; x <= limite; x++) {
 
 
-    let anagram2 = micadena2.replace(/ /g, '').toLowerCase()
-    anagram2 = anagram2.split('').sort().join('')
-
-
-    if (anagram1 == anagram2) {
-        Swal.fire({
-            icon: 'success',
-            text: 'Muy bien!! las palabras o frases son anagramas'
-        })
-
-
-    } else {
-        Swal.fire({
-            icon: 'error',
-            text: 'Que mal!!as palabras o frases no son anagramas'
-        })
+        if(esprimo(x) == true){
+            misprimos.push(x)
+        }
     }
+ 
+    
+function esprimo(estenumero){
+    let divisible = 0
+
+
+    for (let x = 1; x <= estenumero; x++) {
+        if(estenumero%x == 0){
+            divisible = divisible + 1
+        }  
+
+
+    }
+
+
+    if (divisible>2){
+        return false
+    }else{
+        return true
+    }
+}
+Swal.fire({
+    icon: 'success',
+    text: 'todos los numero primos menores o iguales a ' + limite + ' son '+ misprimos
 })
-
-
-
-
+})
 
 
 
